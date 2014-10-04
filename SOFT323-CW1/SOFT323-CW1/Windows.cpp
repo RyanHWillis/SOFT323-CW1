@@ -9,9 +9,9 @@
 #include <Windows.h>
 #include <wchar.h>
 #include <string>
-//#include "Game.h"
+#include "Game.h"
 
-//static KeyboardServer kServ;
+static KeyboardServer kServ;
 using namespace std;
 static const wstring kWindowID(L"DirectXWindow");
 
@@ -96,7 +96,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, INT)
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 	UpdateWindow(hWnd);
 
-	//Game theGame(hWnd, kServ);
+	Game theGame(hWnd, kServ);
 
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
@@ -109,7 +109,7 @@ int WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, INT)
 		}
 		else
 		{
-			//theGame.Go();
+			theGame.Go();
 		}
 	}
 
